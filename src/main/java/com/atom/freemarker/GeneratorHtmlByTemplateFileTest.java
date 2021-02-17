@@ -15,14 +15,14 @@ import java.util.*;
  *
  * @author Atom
  */
-public class GeneratorHtmlTest {
+public class GeneratorHtmlByTemplateFileTest {
 
     public static void main(String[] args) throws IOException, TemplateException {
         Map<String, Object> params = getMap();
         String s = FreemarkerUtil.processString("test1.ftl", params);
         System.err.println(s);
 
-        InputStream inputStream = IOUtils.toInputStream(s, "utf8");
+        InputStream inputStream = IOUtils.toInputStream(s, "utf-8");
         FileOutputStream outputStream = new FileOutputStream("/Users/atom/temp/a.html");
 
         IOUtils.copy(inputStream, outputStream);
