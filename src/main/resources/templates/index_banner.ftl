@@ -17,7 +17,8 @@
         <#--<div class="item" style="background-image: url(http://localhost:80/img/widget-bannerB.jpg);"></div>-->
         <#--<div class="item" style="background-image: url(http://localhost:80/img/widget-bannerA.jpg);"></div>-->
         <#--<div class="item" style="background-image: url(http://localhost:80/img/widget-banner3.png);"></div>-->
-        <#--非空判断-->
+
+        <#--非空判断??-->
         <#if model??>
             <#--遍历model中的value-->
             <#list model as item>
@@ -28,6 +29,8 @@
     </div>
     <div class="indicators"></div>
 </div>
+
+
 <script type="text/javascript" src="http://localhost:80/plugins/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="http://localhost:80/plugins/bootstrap/dist/js/bootstrap.js"></script>
 <script type="text/javascript">

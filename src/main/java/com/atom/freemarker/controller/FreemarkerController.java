@@ -19,30 +19,44 @@ public class FreemarkerController {
     @Resource
     private RestTemplate restTemplate;
 
-    //返回course测试
+    /**
+     * 返回course测试
+     *
+     * @param map
+     * @return
+     */
     @RequestMapping("/course")
     public String course(Map<String, Object> map) {
-        //远程调用rest Template调用接口
+        //远程调用rest Template调用接口，获取页面数据模型数据
         ResponseEntity<Map> forEntity = restTemplate.getForEntity("http://localhost:31200/course/courseview/297e7c7c62b888f00162b8a7dec20000", Map.class);
         Map body = forEntity.getBody();
         //putAll讲所有的key-value放入map中
         map.putAll(body);
-
         return "course";
     }
 
-    //返回banner测试
+    /**
+     * 返回banner测试
+     *
+     * @param map
+     * @return
+     */
     @RequestMapping("/banner")
     public String index_banner(Map<String, Object> map) {
-        //远程调用rest Template调用接口
-        ResponseEntity<Map> forEntity = restTemplate.getForEntity("http://localhost:31001/cms/config/getmodel/5a791725dd573c3574ee333f", Map.class);
-        Map body = forEntity.getBody();
+        //远程调用rest Template调用接口,获取页面数据模型数据
+        ResponseEntity<Map> forEntity = restTemplate.getForEntity("http://localhost:31001/cms/config/5a791725dd573c3574ee333f", Map.class);
+        Map model = forEntity.getBody();
         //putAll讲所有的key-value放入map中
-        map.putAll(body);
-
+        map.putAll(model);
         return "index_banner";
     }
 
+    /**
+     * freemarker 基本语法测试
+     *
+     * @param map
+     * @return
+     */
     @RequestMapping("/test1")
     public String test1(Map<String, Object> map) {
         map.put("name", "atom001!");
