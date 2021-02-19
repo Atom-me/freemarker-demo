@@ -28,7 +28,7 @@ public class FreemarkerController {
     @RequestMapping("/course")
     public String course(Map<String, Object> map) {
         //远程调用rest Template调用接口，获取页面数据模型数据
-        ResponseEntity<Map> forEntity = restTemplate.getForEntity("http://localhost:31200/course/courseview/297e7c7c62b888f00162b8a7dec20000", Map.class);
+        ResponseEntity<Map> forEntity = restTemplate.getForEntity("http://localhost:31200/course/courseview/4028e581617f945f01617f9dabc40000", Map.class);
         Map body = forEntity.getBody();
         //putAll讲所有的key-value放入map中
         map.putAll(body);
